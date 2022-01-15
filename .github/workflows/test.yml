@@ -1,0 +1,14 @@
+name: Github action
+on: [push]
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: node mobules installation
+        run: npm install
+      - name: Build the project
+        run: npm run build
+      - name: Complete
+        run: echo "completed"
